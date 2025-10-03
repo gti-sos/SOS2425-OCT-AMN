@@ -1,0 +1,992 @@
+{
+	"info": {
+		"_postman_id": "d100a740-56d5-4920-9b28-a902f719dbf0",
+		"name": "SOS2425-OCT-AMN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46820698",
+		"_collection_link": "https://alvaro-3103859.postman.co/workspace/Alvaro's-Workspace~3c04e170-7f5d-44fe-8fc4-794ec359b6ce/collection/46820698-d100a740-56d5-4920-9b28-a902f719dbf0?action=share&source=collection_link&creator=46820698"
+	},
+	"item": [
+		{
+			"name": "GET /forest-fires/loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 or 409\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 409]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has a message\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"message\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains data array\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"data\");\r",
+							"    pm.expect(jsonData.data).to.be.an('array');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/loadInitialData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /forest-fires/loadAlvaroData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La respuesta contiene un mensaje de éxito\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"message\");\r",
+							"    pm.expect(jsonData.message).to.include(\"Álvaro\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Los datos están presentes y son un array\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"data\");\r",
+							"    pm.expect(jsonData.data).to.be.an('array');\r",
+							"    pm.expect(jsonData.data.length).to.be.above(0);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/loadAlvaroData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"loadAlvaroData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /forest-fires",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an array\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Each item has required fields\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    if (jsonData.length > 0) {\r",
+							"        jsonData.forEach(item => {\r",
+							"            pm.expect(item).to.have.property(\"year\");\r",
+							"            pm.expect(item).to.have.property(\"autonomous_community\");\r",
+							"            pm.expect(item).to.have.property(\"number_of_accidents\");\r",
+							"            pm.expect(item).to.have.property(\"percentage_of_large_fires\");\r",
+							"        });\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /forest-fires/2024/andalucia DOS PARAMETROS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La respuesta es un objeto con los campos esperados\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    pm.expect(data).to.be.an('object');\r",
+							"    pm.expect(data).to.have.property(\"year\", 2024);\r",
+							"    pm.expect(data).to.have.property(\"autonomous_community\", \"andalucia\"); // minúsculas\r",
+							"    pm.expect(data).to.have.property(\"number_of_accidents\");\r",
+							"    pm.expect(data).to.have.property(\"percentage_of_large_fires\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Los valores de los campos son correctos\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    pm.expect(data.number_of_accidents).to.eql(10034);\r",
+							"    pm.expect(data.percentage_of_large_fires).to.eql(0.39);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/2024/Andalucia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"2024",
+						"Andalucia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /forest-fires/2016 POR FECHA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La respuesta es un array\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    pm.expect(data).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Todos los elementos tienen el año 2016\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    data.forEach(item => {\r",
+							"        pm.expect(item.year).to.eql(2016);\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Cada elemento tiene los campos esperados\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    data.forEach(item => {\r",
+							"        pm.expect(item).to.have.property(\"autonomous_community\");\r",
+							"        pm.expect(item).to.have.property(\"number_of_accidents\");\r",
+							"        pm.expect(item).to.have.property(\"percentage_of_large_fires\");\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/2016",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"2016"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /forest-fires/andalucia POR COMUNIDAD",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parámetro esperado en la URL (cambia si pruebas otra comunidad)\r",
+							"const communityParam = \"andalucia\";\r",
+							"\r",
+							"// Función para normalizar texto (quita tildes, mayúsculas y espacios)\r",
+							"function normalize(str) {\r",
+							"    return str.normalize(\"NFD\").replace(/[\\u0300-\\u036f]/g, \"\").trim().toLowerCase();\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Código de estado es 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"La respuesta es un array\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an(\"array\");\r",
+							"});\r",
+							"\r",
+							"pm.test(`Todos los registros son de la comunidad '${communityParam}'`, function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const expected = normalize(communityParam);\r",
+							"\r",
+							"    jsonData.forEach((item, index) => {\r",
+							"        const actual = normalize(item.autonomous_community || \"\");\r",
+							"        console.log(`Ítem ${index}:`, actual);\r",
+							"        pm.expect(actual).to.eql(expected);\r",
+							"    });\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/andalucia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"andalucia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /forest-fires/2020/andalucia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado 201 - creado\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Respuesta contiene mensaje de éxito\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res).to.have.property(\"message\", \"Dato insertado correctamente\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"year\": 2020,\r\n  \"autonomous_community\": \"andalucia\",\r\n  \"number_of_accidents\": 18458,\r\n  \"percentage_of_large_fires\": 0.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /forest-fires ERROR 400",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado 400 - Bad Request\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El error indica campos faltantes\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res.error).to.include(\"Faltan campos\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"year\": 2023,\r\n  \"autonomous_community\": \"andalucia\",\r\n  \"number_of_accidents\": 8900\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /forest-fires/2016 ERROR 405",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado 405 - Method Not Allowed\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El error menciona que POST no está permitido\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res.error).to.include(\"POST no permitido\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/2016",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"2016"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /forest-fires ERROR 409",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado 409 - Conflict\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El error menciona que el dato ya existe\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res.error).to.include(\"Ya existe ese dato\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"year\": 2024,\r\n  \"autonomous_community\": \"Cataluña\",\r\n  \"number_of_accidents\": 8000,\r\n  \"percentage_of_large_fires\": 0.35\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /forest-fires/2024/ceuta 200 OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado 200 - Actualización correcta\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Respuesta incluye mensaje de éxito\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res.message).to.include(\"actualizado\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"year\": 2024,\r\n  \"autonomous_community\": \"ceuta\",\r\n  \"number_of_accidents\": 1234,\r\n  \"percentage_of_large_fires\": 0.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/2024/ceuta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"2024",
+						"ceuta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /forest-fires/2024/andalucia ERROR 400",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado 400 - Bad Request\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Respuesta indica campos obligatorios faltantes\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res.error).to.include(\"Faltan campos\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"year\": \"dosmilveinticuatro\",\r\n  \"autonomous_community\": \"andalucia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/2024/andalucia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"2024",
+						"andalucia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /forest-fires/2025/Andalucia ERROR 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado 404 - Not Found\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Respuesta indica que el dato no fue encontrado\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res.error).to.include(\"Dato no encontrado\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"year\": 2025,\r\n  \"autonomous_community\": \"andalucia\",\r\n  \"number_of_accidents\": 99,\r\n  \"percentage_of_large_fires\": 0.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/2025/andalucia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"2025",
+						"andalucia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /forest-fires/ ERROR 405",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado 405 - Method Not Allowed\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Mensaje de error adecuado\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res.error).to.include(\"PUT no permitido en el recurso base\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /forest-fires/2024/andalucia ERROR 409",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado 409 - Conflicto\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Mensaje de conflicto correcto\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.error).to.include(\"No se puede modificar la clave primaria (año o comunidad)\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"year\": 2023,\r\n  \"autonomous_community\": \"ceuta\",\r\n  \"number_of_accidents\": 1234,\r\n  \"percentage_of_large_fires\": 0.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/2024/andalucia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"2024",
+						"andalucia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /forest-fires/2010 BORRAR DATO POR AÑO ERROR 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Eliminar datos por año o devolver 404 si no hay\", function () {\r",
+							"    const status = pm.response.code;\r",
+							"    const json = pm.response.json();\r",
+							"\r",
+							"    if (status === 200) {\r",
+							"        pm.expect(status).to.eql(200);\r",
+							"        pm.expect(json.message).to.include(\"eliminado\");\r",
+							"    } else if (status === 404) {\r",
+							"        pm.expect(status).to.eql(404);\r",
+							"        pm.expect(json.message).to.include(\"No hay registros que coincidan\");\r",
+							"    } else {\r",
+							"        pm.expect.fail(`Código inesperado: ${status}`);\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/2010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"2010"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /forest-fires/hola ERROR 400 DEMASIADOS PARAMETROS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"DELETE /forest-fires/2024/andalucia/hola - 400 Bad Request\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.error).to.include(\"Demasiados parámetros\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/2024/andalucia/hola",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"2024",
+						"andalucia",
+						"hola"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /forest-fires/2024 BORRAR DATO POR AÑO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"DELETE /forest-fires/2024 - 200 o 404\", function () {\r",
+							"    const status = pm.response.code;\r",
+							"    const jsonData = pm.response.json();\r",
+							"\r",
+							"    if (status === 200) {\r",
+							"        pm.expect(jsonData.message).to.include(\"registro(s) eliminado(s)\");\r",
+							"    } else if (status === 404) {\r",
+							"        pm.expect(jsonData.error).to.include(\"No se encontraron registros\");\r",
+							"    } else {\r",
+							"        pm.expect.fail(`Código inesperado: ${status}`);\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires/2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires",
+						"2024"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar datos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado 200 - Eliminación exitosa\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Mensaje correcto de eliminación\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const match = jsonData.message.match(/Eliminados (\\d+) registros/);\r",
+							"\r",
+							"    pm.expect(match).to.not.be.null;\r",
+							"    const count = parseInt(match[1]);\r",
+							"    pm.expect(count).to.be.greaterThan(0); // O el número que esperas\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar datos por segunda vez ERROR 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Elimina todos los datos o devuelve 404 si no hay datos\", function () {\r",
+							"    const status = pm.response.code;\r",
+							"    const jsonData = pm.response.json();\r",
+							"\r",
+							"    if (status === 200) {\r",
+							"        pm.expect(jsonData.message).to.include(\"Eliminados\");\r",
+							"    } else if (status === 404) {\r",
+							"        pm.expect(jsonData.error).to.include(\"No hay datos que eliminar\");\r",
+							"    } else {\r",
+							"        pm.expect.fail(`Código de estado inesperado: ${status}`);\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:16078/api/v1/forest-fires",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "16078",
+					"path": [
+						"api",
+						"v1",
+						"forest-fires"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
