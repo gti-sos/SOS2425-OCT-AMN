@@ -81,7 +81,7 @@
 					<div class="content">
 						<ul>
 							<li>
-								<a href="https://documenter.getpostman.com/view/46820698/2sB3B7PZd2"
+								<a href="https://documenter.getpostman.com/view/42116184/2sB2cUBNgF"
 									>API Forest Fires</a>
 							</li>
 						</ul>
@@ -130,7 +130,7 @@
 			</div>
 
 			<div class="interactive-box">
-				<a href="/analytics" style="display:block; width:100%;">
+				<a href="/graficos/forest-fires" style="display:block; width:100%;">
 					<button>Gráficos</button>
 				</a>
 			</div>
@@ -142,7 +142,7 @@
 					<div class="content">
 						<ul>
 							<li>
-								<a href="http://sos2425-OCT-AMN.onrender.com/forest-fires">Forest Fires</a>
+								<a href="https://youtu.be/HxBlpFlXzAU">Forest Fires</a>
 							</li>
 						</ul>
 					</div>
