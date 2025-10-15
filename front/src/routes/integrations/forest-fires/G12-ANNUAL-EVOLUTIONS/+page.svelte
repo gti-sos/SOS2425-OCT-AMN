@@ -171,8 +171,8 @@
     </div>
 
     <div class="back-button-container">
-    <a href="/integrations" class="back-button-link">
-        <button class="back-button">Volver a Integraciones</button>
+    <a href="/graficos/forest-fires" class="back-button-link">
+        <button class="back-button">Volver a los gráficos</button>
     </a>
     </div>
 
