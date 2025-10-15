@@ -134,7 +134,7 @@
 
     <div class="explanation">
         <p>
-            Este gráfico de líneas muestra la evolución del precio de Bitcoin a lo largo del tiempo,
+            Este gráfico de área muestra la evolución del precio de Bitcoin a lo largo del tiempo,
             utilizando datos de la API de Coingecko.
         </p>
     </div>
