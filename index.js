@@ -4,7 +4,8 @@ import cors from "cors";
 import helmet from "helmet";
 import * as dotenv from 'dotenv';
 const app = express();
-const PORT = process.env.PORT || 8080;
+//app.disable('x-powered-by'); -solución alternativa-
+const PORT = process.env.PORT || 16078;
 
 
 /*
