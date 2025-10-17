@@ -30,7 +30,8 @@
 							"});"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -38,15 +39,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/loadInitialData",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/loadInitialData",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"loadInitialData"
 					]
@@ -80,7 +77,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -88,15 +86,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/loadAlvaroData",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/loadAlvaroData",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"loadAlvaroData"
 					]
@@ -134,7 +128,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -142,15 +137,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires"
 					]
 				}
@@ -185,7 +176,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -193,15 +185,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/2024/Andalucia",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/2024/Andalucia",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"2024",
 						"Andalucia"
@@ -244,7 +232,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -252,15 +241,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/2016",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/2016",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"2016"
 					]
@@ -304,7 +289,8 @@
 							"});"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -312,15 +298,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/andalucia",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/andalucia",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"andalucia"
 					]
@@ -346,7 +328,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -363,15 +346,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires"
 					]
 				}
@@ -396,7 +375,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -413,15 +393,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires"
 					]
 				}
@@ -445,7 +421,8 @@
 							"});"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -453,15 +430,11 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/2016",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/2016",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"2016"
 					]
@@ -486,7 +459,8 @@
 							"});"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -503,15 +477,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires"
 					]
 				}
@@ -535,7 +505,8 @@
 							"});"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -552,15 +523,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/2024/ceuta",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/2024/ceuta",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"2024",
 						"ceuta"
@@ -586,7 +553,8 @@
 							"});"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -603,15 +571,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/2024/andalucia",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/2024/andalucia",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"2024",
 						"andalucia"
@@ -638,7 +602,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -655,15 +620,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/2025/andalucia",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/2025/andalucia",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"2025",
 						"andalucia"
@@ -689,7 +650,8 @@
 							"});"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -697,17 +659,12 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
-						"forest-fires",
-						""
+						"forest-fires"
 					]
 				}
 			},
@@ -730,7 +687,8 @@
 							"});"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -747,15 +705,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/2024/andalucia",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/2024/andalucia",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"2024",
 						"andalucia"
@@ -788,7 +742,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -796,15 +751,11 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/2010",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/2010",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"2010"
 					]
@@ -826,7 +777,8 @@
 							"});"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -834,15 +786,11 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/2024/andalucia/hola",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/2024/andalucia/hola",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"2024",
 						"andalucia",
@@ -874,7 +822,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -882,15 +831,11 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires/2024",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires/2024",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires",
 						"2024"
 					]
@@ -920,7 +865,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -928,15 +874,11 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires"
 					]
 				}
@@ -965,7 +907,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -973,15 +916,11 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:16078/api/v1/forest-fires",
-					"protocol": "http",
+					"raw": "{{base_url}}/forest-fires",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "16078",
 					"path": [
-						"api",
-						"v1",
 						"forest-fires"
 					]
 				}
