@@ -4,10 +4,10 @@ export async function handle({ event, resolve }) {
 
     // Lista de TODOS los dominios de Render de mis compañeros
     const allowedApiDomains = [
-        'https://sos2425-crr.onrender.com/api/v1/annual-evolutions', 
-        'https://sos2425-15.onrender.com/api/v1/temperature-stats',
-        'https://sos2425-20.onrender.com/api/v1/fines',
-        'https://sos2425-AGB.onrender.com/api/v1/public-transit-stats'
+        'https://sos2425-crr.onrender.com', 
+        'https://sos2425-15.onrender.com',
+        'https://sos2425-20.onrender.com',
+        'https://sos2425-AGB.onrender.com'
    
         
     ].join(' '); 
